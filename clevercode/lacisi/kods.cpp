@@ -1,28 +1,18 @@
 #include <iostream>
-#include <string>
-#include <sstream>
-
+#include <set>
 using namespace std;
+
 int main() {
-  string str;
-  long sk;
-  do{
-    cin>>str;
-  }while(str.length()>100);
-  
-  long garums = str.length(); 
-  long skaitli[garums];
-  for(long i=0; i<garums; i++){
-    stringstream ss(str.substr(i, garums));
-    ss>>sk;
-    skaitli[i]=sk;
-  }
-
-  long sum=0;
-  for(long i=0; i<garums; i++){
-    sum+=skaitli[i];
-  }
-
-  cout<<sum;
-
+    int N;
+    cin >> N;
+    set<string> komix;
+    for (int i = 0; i < N; i++) {
+        string url;
+        cin >> url;
+        //string date_str = url.substr(37,4);
+        //cout<<date_str << " ";
+        komix.insert(url);
+    }
+    cout << komix.size() << endl;
+    return 0;
 }
